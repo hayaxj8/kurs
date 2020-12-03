@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body {
+                color: #0f0c0c;
+                min-height: 90vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .container {
+                display: flex;
+                flex-direction: column;
+                background-color: #4b4b4b;
+                padding: 1em;
+                max-width: 500px;
+                width: 100%;
+                border-radius: 1em;
+            }
+    
+    
+            .result {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Kurs Mata Uang</h2>
+        <div class="container">
+            <input type="number" class="input" placeholder="1">
+            <select class="kurs">
+                <option value="usd">USD - 13.000</option>
+                <option value="won">WON - 12.800</option>
+                <option value="rmb">RMB - 2.200</option>
+            </select>
+            <button class="hitung">Hitung</button>
+            <p class="result">Hasil: -</p>
+        </div>
+    
+        <script>
+            const input = document.querySelector(".input");
+            const kurs = document.querySelector(".kurs");
+            const btnHitung = document.querySelector(".hitung");
+            const result = document.querySelector(".result");
+    
+            btnHitung.addEventListener("click", function() {
+                if (kurs.value == "usd") {
+                    result.innerHTML = "Hasil: " + parseInt(input.value) * 13000;
+                }
+    
+                else if (kurs.value == "won") {
+                    result.innerHTML = "Hasil: " + parseInt(input.value) * 12800;
+                }
+    
+                else if (kurs.value == "rmb") {
+                    result.innerHTML = "Hasil: " + parseInt(input.value) * 2200;
+                }
+            })
+        </script>
+    
+    </body>
+</html>
